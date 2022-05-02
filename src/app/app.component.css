@@ -1,0 +1,20 @@
+.card{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.row #izquierda{
+    padding-right: 10px;
+}
+
+.row #derecha{
+    padding-left: 0;
+}
+
+#izquierda .card{
+    margin-left: 50px;
+}
+
+#derecha .card{
+    margin-right: 50px;
+}
