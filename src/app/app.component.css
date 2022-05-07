@@ -1,20 +1,44 @@
-.card{
-    margin-top: 25px;
-    margin-bottom: 25px;
+body{
+    background-color: grey;
 }
 
-.row #izquierda{
-    padding-right: 10px;
+.cuadro-1{
+    grid-area: header;
 }
 
-.row #derecha{
-    padding-left: 0;
+.cuadro-1 h1{
+    margin: 0;
+    line-height: 150%;
 }
 
-#izquierda .card{
-    margin-left: 50px;
+.cuadro-2{  grid-area: jugadores;  }
+.cuadro-3{
+    grid-area: tablero;
+    align-content: center;
+}
+.cuadro-4{  grid-area: mensajes;  }
+.cuadro-5{  grid-area: footer;  }
+
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    "header header header header header header header header header header header header"
+    "jugadores jugadores jugadores jugadores jugadores tablero tablero tablero tablero tablero tablero tablero"
+    "mensajes mensajes mensajes mensajes mensajes tablero tablero tablero tablero tablero tablero tablero"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+    background-color: lightcoral;
+    gap: 10px;
+    padding: 10px;
 }
 
-#derecha .card{
-    margin-right: 50px;
+.grid-container > div {
+    background-color: bisque;
+    font-size: 30px;
+    border: 1px black solid;
+    
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
 }
