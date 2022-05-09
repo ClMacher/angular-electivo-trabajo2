@@ -1,57 +1,80 @@
-<div id="fondo" class="grid-container">
-    <button class="btn btn-primary" id="">1</button>
-    <button class="btn btn-primary" id="">2</button>
-    <button class="btn btn-primary" id="">3</button>
-    <button class="btn btn-primary" id="">4</button>
-    <button class="btn btn-primary" id="">5</button>
-    <button class="btn btn-primary" id="">6</button>
-    <button class="btn btn-primary" id="">7</button>
 
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
+<div id="fondo" class="grid-container">
+    <button class="btn btn-primary" id="" (click)="hacerJugada(0)">1</button>
+    <button class="btn btn-primary" id="" (click)="hacerJugada(1)">2</button>
+    <button class="btn btn-primary" id="" (click)="hacerJugada(2)">3</button>
+    <button class="btn btn-primary" id="" (click)="hacerJugada(3)">4</button>
+    <button class="btn btn-primary" id="" (click)="hacerJugada(4)">5</button>
+    <button class="btn btn-primary" id="" (click)="hacerJugada(5)">6</button>
+    <button class="btn btn-primary" id="" (click)="hacerJugada(6)">7</button>
+
+    <!-- <div *ngFor="let horizontal of estadoTablero">
+        <div *ngFor="let vertical of estadoTablero[0]">
+            <div class="cuadro-agujero">
+                <div class="agujero" >
+                </div>
+            </div>
+        </div>
+    </div> -->
+
     
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
-    <div class="agujero"></div>
+    <div class="columna" id="columna-0">
+        <div *ngFor="let vertical of posicionesTablero[0]">
+            <div class="cuadro-agujero">
+                <div class="agujero" id="agujero{{vertical}}"></div>
+            </div>
+        </div>
+    </div>
+    <div class="columna" id="columna-1">
+        <div *ngFor="let vertical of posicionesTablero[1]">
+            <div class="cuadro-agujero">
+                <div class="agujero" id="agujero{{vertical}}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="columna" id="columna-2">
+        <div *ngFor="let vertical of posicionesTablero[2]">
+            <div class="cuadro-agujero">
+                <div class="agujero" id="agujero{{vertical}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columna" id="columna-3">
+        <div *ngFor="let vertical of posicionesTablero[3]">
+            <div class="cuadro-agujero">
+                <div class="agujero" id="agujero{{vertical}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columna" id="columna-4">
+        <div *ngFor="let vertical of posicionesTablero[4]">
+            <div class="cuadro-agujero">
+                <div class="agujero" id="agujero{{vertical}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columna" id="columna-5">
+        <div *ngFor="let vertical of posicionesTablero[5]">
+            <div class="cuadro-agujero">
+                <div class="agujero" id="agujero{{vertical}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columna" id="columna-6">
+        <div *ngFor="let vertical of posicionesTablero[6]">
+            <div class="cuadro-agujero">
+                <div class="agujero" id="agujero{{vertical}}">
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <div class="ficha" class="ficha-roja"></div>
+    <div class="ficha" class="ficha-azul"></div> -->
 </div>

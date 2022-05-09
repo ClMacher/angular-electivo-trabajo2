@@ -11,10 +11,21 @@
     grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
 }
 
+.cuadro-agujero {
+    position:relative;
+    width:100px; height:100px;
+    margin:0 auto;
+    overflow:hidden;
+}
+
 .agujero{
-    background-color: yellow;
-    border-radius: 50%;
+    content:'';
+    position:relative;
+    left:0px; top:0px;
+    border-radius:100%;
     margin: 10px;
+    width:80px; height:80px;
+    box-shadow: 0px 0px 0px 2000px gray;
 }
 
 .btn{
@@ -23,4 +34,25 @@
     width: 60px;
     align-self: center;
     margin-left: 20%;
+}
+
+.ficha{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: rebeccapurple;
+}
+
+.ficha-roja{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: red;
+}
+
+.ficha-azul{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: blue;
 }
