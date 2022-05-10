@@ -8,17 +8,17 @@
     <button class="btn btn-primary" id="" (click)="hacerJugada(5)">6</button>
     <button class="btn btn-primary" id="" (click)="hacerJugada(6)">7</button>
 
-    <!-- <div *ngFor="let horizontal of estadoTablero">
-        <div *ngFor="let vertical of estadoTablero[0]">
+     <div *ngFor="let ancho of anchoTabla">
+        <div *ngFor="let alto of altoTabla">
             <div class="cuadro-agujero">
-                <div class="agujero" >
+                <div class="agujero" id="agujero{{ancho}}{{alto}}">
                 </div>
             </div>
         </div>
-    </div> -->
+    </div> 
 
     
-    <div class="columna" id="columna-0">
+  <!-- <div class="columna" id="columna-0">
         <div *ngFor="let vertical of posicionesTablero[0]">
             <div class="cuadro-agujero">
                 <div class="agujero" id="agujero{{vertical}}"></div>
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  -->
 <!-- 
     <div class="ficha" class="ficha-roja"></div>
     <div class="ficha" class="ficha-azul"></div> -->
