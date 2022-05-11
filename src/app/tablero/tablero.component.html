@@ -11,7 +11,8 @@
      <div *ngFor="let ancho of anchoTabla">
         <div *ngFor="let alto of altoTabla">
             <div class="cuadro-agujero">
-                <div class="agujero" id="agujero{{ancho}}{{alto}}">
+                <div class="agujero">
+                    <div class="ficha-vacia" id="agujero{{ancho}}{{alto}}"></div>
                 </div>
             </div>
         </div>

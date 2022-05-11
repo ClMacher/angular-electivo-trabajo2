@@ -78,21 +78,12 @@ export class TableroComponent {
 
   crearFicha(x:number, i:number){
     const columna = document.getElementById("agujero"+x+i);
-    console.log(i);
     console.log("agujero"+x+i);
-    const div = document.createElement("div");
-    div.classList.add("ficha");
     if(this.turnoJugador){
-      div.classList.add("ficha-roja");
-      console.log("FICHA ROJA"+columna?.id.valueOf());
-      div.textContent="ROJO";
+      columna?.setAttribute("class", "ficha ficha-roja");
     }else{
-      div.classList.add("ficha-azul");
-      console.log("FICHA AZUL"+columna?.id.valueOf());
-      div.textContent="AZUL";
+      columna?.setAttribute("class", "ficha ficha-azul");
     }
-    console.log(div.className);
-    columna?.appendChild(div);
   }
 
   evaluarPartida(){
