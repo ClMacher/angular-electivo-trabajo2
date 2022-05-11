@@ -104,67 +104,164 @@ export class TableroComponent {
 
     let index:number = 0;
     let indexMas:number = 0;
-   
 
-    //RECORRIDO POR ALTURA
+    if (!ganador) {
+      ganador = this.recorrerPorAltura(ganador);
+    }
+
+    if (!ganador) {
+      ganador = this.recorrerPorAnchura(ganador);
+    }
+
+    if (!ganador) {
+      ganador = this.recorrerAbajoDerecha(ganador);
+    }
+
+    if (!ganador) {
+      ganador = this.recorrerArribaIzquierda(ganador);
+    }
+    if(ganador){
+      alert("Ganador");
+    }
+  }
+  
+  //  ARRIBA A ABAJO
+  recorrerPorAltura(ganador: boolean){
+    var contador:number = 1;
+    var i:number = 0;
+    var j:number = 0;
+
+    let index:number = 0;
+    let indexMas:number = 0;
     do {
       j=0;
       do {
-        if (j<this.altoTabla.length){
+        if (j<this.altoTabla.length-1){
           index = this.estadoTablero[i][j];
           indexMas = this.estadoTablero[i][j + 1];
-  
           if ((index == indexMas) && (index != 0)) {
-            console.log("cont: " + contador + ", index: " + index);
             contador++;
           } else {
             contador = 1;
           }
           if (contador == 4) {
             ganador = true;
+            return ganador;
           }
-          
-          
         }
-        console.log("vuelta " + i + "," + j);
         j++;
       } while (j < this.altoTabla.length && !ganador);
       i++;
     }while (i<this.anchoTabla.length && !ganador);
 
-    //RECORRIDO POR ANCHURA
-    i=0;
-    j=0;
+    return ganador;
+  }
+
+  // IZQUIERDA A DERECHA
+  recorrerPorAnchura(ganador: boolean){
+    var contador:number = 1;
+    var i:number = 0;
+    var j:number = 0;
+
+    let index:number = 0;
+    let indexMas:number = 0;
     contador = 1;
     if(!ganador){
       do {
         i=0;
         do {
-          if (i<this.anchoTabla.length){
+          if (i<this.anchoTabla.length-1){
             index = this.estadoTablero[i][j];
             indexMas = this.estadoTablero[i + 1][j];
-            console.log("cont: " + contador + ", index: " + indexMas);
-    
             if ((index == indexMas) && (index != 0)) {
-              console.log("cont: " + contador + ", index: " + index);
               contador++;
             } else {
               contador = 1;
             }
             if (contador == 4) {
               ganador = true;
+              return ganador
             }
           }
-          console.log("vuelta " + i + "," + j);
           i++;
         } while (i < this.anchoTabla.length && !ganador);
         j++;
       }while (j<this.altoTabla.length && !ganador);
     }
+    return ganador
+  }
+
+  //  ABAJO A DERECHA
+  recorrerAbajoDerecha(ganador: boolean){
+    var contador:number = 1;
+    var i:number = 0;
+    var j:number = 0;
+
+    let index:number = 0;
+    let indexMas:number = 0;
+    contador = 1;
+
+    if(!ganador){
+      do {
+        j=0;
+        do {
+          if (j<this.altoTabla.length && j>=0 && i<this.anchoTabla.length-1){
+            index = this.estadoTablero[i][j];
+            indexMas = this.estadoTablero[i + 1][j-1];
     
-    if(ganador){
-      alert("Ganador");
+            if ((index == indexMas) && (index != 0)) {
+              contador++;
+            } else {
+              contador = 1;
+            }
+            if (contador == 4) {
+              ganador = true;
+              return ganador;
+            }
+          }
+          j++;
+        } while (j < this.altoTabla.length && !ganador);
+        i++;
+      }while (i<this.anchoTabla.length && !ganador);
     }
+    return ganador;
+  }
+
+  //  ARRIBA A DERECHA
+  recorrerArribaIzquierda(ganador: boolean){
+    var contador:number = 1;
+    var i:number = this.anchoTabla.length-1;
+    var j:number = 0;
+
+    let index:number = 0;
+    let indexMas:number = 0;
+    contador = 1;
+
+    if(!ganador){
+      do {
+        j=0;
+        do {
+          console.log("Vuelta: " + i + ", " + j);
+          if (j<this.altoTabla.length && i>=0 && j>=0){
+            index = this.estadoTablero[i][j];
+            indexMas = this.estadoTablero[i-1][j-1];
+    
+            if ((index == indexMas) && (index != 0)) {
+              contador++;
+            } else {
+              contador = 1;
+            }
+            if (contador == 4) {
+              ganador = true;
+              return ganador;
+            }
+          }
+          j++;
+        } while (j < this.altoTabla.length && !ganador);
+        i--;
+      }while (i>0 && !ganador);
+    }
+    return ganador;
   }
 
   constructor() { }
